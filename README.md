@@ -1,2 +1,1 @@
-# dotfiles
-linux dotfiles
+My linux dotfiles. Only tmux and vim for now.
