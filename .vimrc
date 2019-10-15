@@ -1,4 +1,4 @@
-" vim-bootstrap 
+" vim-bootstrap
 
 "*****************************************************************************
 "" Vim-PLug core
@@ -43,7 +43,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'zxqfl/tabnine-vim'
 "" colorschemes
 Plug 'flrnprz/candid.vim'
@@ -131,6 +131,13 @@ set fileencoding=utf-8
 set fileencodings=utf-8
 set ttyfast
 
+"" Whitespace
+" set listchars=eol:¶,nbsp:_,tab:»·,trail:·,extends:>,precedes:<
+set listchars=nbsp:_,tab:»·,trail:·,extends:>,precedes:< "" removed eol
+set list
+" trim traliling whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
+
 "" Fix backspace indent
 set backspace=indent,eol,start
 
@@ -196,7 +203,7 @@ else
   let g:indentLine_char = '┆'
   let g:indentLine_faster = 1
 
-  
+
   if $COLORTERM == 'gnome-terminal'
     set term=gnome-256color
   else
@@ -204,7 +211,7 @@ else
       set term=xterm-256color
     endif
   endif
-  
+
 endif
 
 
@@ -355,8 +362,11 @@ nnoremap <leader>ss :SaveSession<Space>
 nnoremap <leader>sd :DeleteSession<CR>
 nnoremap <leader>sc :CloseSession<CR>
 
-"" Fix indent 
-nnoremap <leader>= gg=G 
+"" Fix indent
+nnoremap <leader>= gg=G
+
+"" fix ;
+nnoremap <leader>; A;
 
 "" Tabs
 nnoremap <Tab> gt
@@ -404,7 +414,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
 " ale
-let g:ale_linters = {}
+let g:ale_linters = { 'javascript': ['eslint'] }
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
