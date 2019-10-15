@@ -44,8 +44,10 @@ Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'zxqfl/tabnine-vim'
 "" colorschemes
 Plug 'flrnprz/candid.vim'
+Plug 'flazz/vim-colorschemes'
 
 
 if isdirectory('/usr/local/opt/fzf')
@@ -172,7 +174,7 @@ set ruler
 set number
 
 let no_buffers_menu=1
-silent! colorscheme molokai
+silent! colorscheme cobalt2
 
 let g:colorizer_auto_filetype='javascript,css,html'
 set mousemodel=popup
