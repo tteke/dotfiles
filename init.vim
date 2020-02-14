@@ -48,7 +48,7 @@ Plug 'avelino/vim-bootstrap-updater'
 Plug 'jparise/vim-graphql'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-eslint', 'coc-prettier', 'coc-tsserver']
 " Plug 'flazz/vim-colorschemes'
 Plug 'sheerun/vim-polyglot'
 Plug 'machakann/vim-sandwich'
@@ -76,7 +76,8 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 "" Color
-Plug 'mhartington/oceanic-next'
+" Plug 'mhartington/oceanic-next'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 Plug 'ryanoasis/vim-devicons' 
 " font patcher
@@ -94,8 +95,8 @@ Plug 'mattn/emmet-vim'
 
 " javascript
 "" Javascript Bundle
-" Plug 'jelera/vim-javascript-syntax'
-Plug 'othree/yajs'
+Plug 'pangloss/vim-javascript'
+" Plug 'othree/yajs'
 
 
 " python
@@ -176,19 +177,35 @@ syntax on
 set ruler
 set number
 set norelativenumber
+set cmdheight=1
 
 let no_buffers_menu=1
 if (has("termguicolors"))
  set termguicolors
 endif
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
-colorscheme OceanicNext
+" let g:oceanic_next_terminal_bold = 1
+" let g:oceanic_next_terminal_italic = 1
+" colorscheme OceanicNext
+colorscheme onehalfdark
 
 set mousemodel=popup
 set t_Co=256
 set guioptions=egmrti
 set gfn=Monospace\ 10
+
+set guicursor=n:blinkon1
+" snd hl group is for language mappings
+set guicursor=n-v-c:block-blinkon250-Cursor/lCursor
+" ve = visual exclusive
+set guicursor+=ve:ver35-Cursor,
+" operator-pending mode
+set guicursor+=o:hor50-Cursor
+" ci => command insert mode
+set guicursor+=i-ci:ver25-blinkon250-CursorTransparent/lCursor
+set guicursor+=r-cr:hor20-Cursor/lCursor
+
+highl CursorTransparent ctermfg=16 ctermbg=253 guifg=#000000 guibg=#00FF00 gui=strikethrough blend=100
+highl Cursor ctermfg=16 ctermbg=253 guifg=#000000 guibg=#00FF00
 
 if has("gui_running")
   if has("gui_mac") || has("gui_macvim")
@@ -238,7 +255,8 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'oceanicnext'
+" let g:airline_theme = 'oceanicnext'
+let g:airline_theme='onehalfdark'
 let g:airline#extensions#branch#enabled = 1
 " let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -655,8 +673,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 " nmap <leader><leader>f :ALEFix
 augroup mygroup
@@ -716,3 +734,8 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+" fix cursor shape after coc listings close
+nnoremap <silent> <space>f :set guicursor=n:blinkon1<CR>
+
+highlight Normal guibg=none
+highlight NonText guibg=none
