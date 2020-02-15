@@ -100,7 +100,7 @@ window:
 
   #     - buttonless: Title bar, transparent background, but no title bar buttons
 
-  decorations: none
+  decorations: full
 
 
 
@@ -122,7 +122,7 @@ window:
 
   #   - SimpleFullscreen
 
-  #startup_mode: Windowed
+  #startup_mode: Maximized
 
 
 
