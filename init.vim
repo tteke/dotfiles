@@ -48,7 +48,7 @@ Plug 'avelino/vim-bootstrap-updater'
 Plug 'jparise/vim-graphql'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-eslint', 'coc-prettier', 'coc-tsserver']
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-eslint', 'coc-prettier', 'coc-tsserver', 'coc-rls']
 " Plug 'flazz/vim-colorschemes'
 Plug 'sheerun/vim-polyglot'
 Plug 'machakann/vim-sandwich'
@@ -493,6 +493,7 @@ augroup vimrc-javascript
 augroup END
 
 
+autocmd FileType rust setl tabstop=2|setl shiftwidth=2|setl expandtab softtabstop=2
 " python
 " vim-python
 augroup vimrc-python

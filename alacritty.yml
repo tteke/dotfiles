@@ -516,11 +516,11 @@ cursor:
 
 shell:
 
-  program: "C:\\Windows\\System32\\wsl.exe"
+#  program: "/bin/sh"
 
-  args:
+#  args:
 
-    - "~ tmux" 
+    - "tmux" 
 
 
 
