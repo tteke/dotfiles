@@ -196,8 +196,6 @@ window:
 
 # change the `it` value in terminfo when altering this setting.
 
-tabspaces: 4
-
 
 
 # Font configuration
@@ -298,7 +296,7 @@ font:
 
   # Point size
 
-  size: 12.0
+  size: 14.0
 
 
 
@@ -362,7 +360,7 @@ font:
 
 # If `true`, bold text is drawn using the bright color variants.
 
-#draw_bold_text_with_bright_colors: true
+draw_bold_text_with_bright_colors: true
 
 
 
@@ -442,11 +440,11 @@ colors:
 
 # The value `0.0` is completely transparent and `1.0` is opaque.
 
-background_opacity: 0.9
+background_opacity: 1.0
 
 
 
-#selection:
+selection:
 
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
@@ -454,7 +452,7 @@ background_opacity: 0.9
 
   # When set to `true`, selected text will be copied to the primary clipboard.
 
-  #save_to_clipboard: false
+  save_to_clipboard: true
 
 
 
@@ -478,7 +476,7 @@ cursor:
 
   #   - | Beam
 
-  style: Beam
+  style: Underline
 
 
 

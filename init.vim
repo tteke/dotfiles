@@ -52,6 +52,7 @@ let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', '
 " Plug 'flazz/vim-colorschemes'
 Plug 'sheerun/vim-polyglot'
 Plug 'machakann/vim-sandwich'
+Plug 'rust-lang/rust.vim'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -431,9 +432,9 @@ if has('autocmd')
 endif
 
 "" Copy/Paste/Cut
-if has('unnamedplus')
+" if has('unnamedplus')
   set clipboard=unnamed,unnamedplus
-endif
+" endif
 
 noremap YY "+y<CR>
 noremap <leader>p "+gP<CR>
