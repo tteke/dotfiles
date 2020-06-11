@@ -32,14 +32,14 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline-themes'
 
 " Plug 'airblade/vim-gitgutter'
 " let g:gitgutter_realtime = 0
 " let g:gitgutter_eager = 0
 
 Plug 'vim-scripts/grep.vim'
-Plug 'vim-scripts/CSApprox'
+" Plug 'vim-scripts/CSApprox'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 " Plug 'w0rp/ale'
@@ -50,6 +50,9 @@ Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-eslint', 'coc-prettier', 'coc-tsserver', 'coc-rls']
 " Plug 'flazz/vim-colorschemes'
+Plug 'megantiu/true.vim'
+let g:true_airline = 1
+
 Plug 'sheerun/vim-polyglot'
 Plug 'machakann/vim-sandwich'
 Plug 'rust-lang/rust.vim'
@@ -78,7 +81,7 @@ Plug 'honza/vim-snippets'
 
 "" Color
 " Plug 'mhartington/oceanic-next'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
+" Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 Plug 'ryanoasis/vim-devicons' 
 " font patcher
@@ -121,7 +124,7 @@ endif
 
 call plug#end()
 
-" Required:
+"" Required:
 filetype plugin indent on
 
 " Automaticaly close nvim if NERDTree is only thing left open
@@ -186,8 +189,7 @@ if (has("termguicolors"))
 endif
 " let g:oceanic_next_terminal_bold = 1
 " let g:oceanic_next_terminal_italic = 1
-" colorscheme OceanicNext
-colorscheme onehalfdark
+colorscheme true
 
 set mousemodel=popup
 set t_Co=256
@@ -218,13 +220,11 @@ else
 
   " IndentLine
   let g:indentLine_enabled = 1
+  let g:indentLine_char = '▏'
   let g:indentLine_concealcursor = 0
-  let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-  " set list
-  " set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,precedes:«,extends:»
+  let g:indentLine_bgcolor_gui = "#5f005f"
+  let g:indentLine_bgcolor_term = 53
   let g:indentLine_faster = 1
-
-  
 endif
 
 
@@ -257,7 +257,7 @@ endif
 
 " vim-airline
 " let g:airline_theme = 'oceanicnext'
-let g:airline_theme='onehalfdark'
+let g:airline_theme='true'
 let g:airline#extensions#branch#enabled = 1
 " let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -421,7 +421,7 @@ let g:UltiSnipsEditSplit="vertical"
 " ale
 " let g:ale_linters = {}
 
-" Tagbar
+"" Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 
@@ -609,17 +609,17 @@ let g:airline_symbols.linenr = ''
 " if hidden is not set, TextEdit might fail.
 set hidden
 
-" Some servers have issues with backup files, see #649
+" " Some servers have issues with backup files, see #649
 set nobackup
 set nowritebackup
 
-" You will have bad experience for diagnostic messages when it's default 4000.
+" " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
 
-" don't give |ins-completion-menu| messages.
-set shortmess+=c
+" " don't give |ins-completion-menu| messages.
+ set shortmess+=c
 
-" always show signcolumns
+" " always show signcolumns
 set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -738,3 +738,6 @@ nnoremap <silent> <space>f :set guicursor=n:blinkon1<CR>
 
 highlight Normal guibg=none
 highlight NonText guibg=none
+highlight LineNr guibg=deeppink4  
+highlight SignColumn guibg=deeppink3
+set nuw=5

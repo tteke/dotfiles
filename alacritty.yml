@@ -364,61 +364,6 @@ draw_bold_text_with_bright_colors: true
 
 
 
-# Colors (Tangoish)
-colors:
-
-  # Default colors
-
-  primary:
-
-    background: '0x282a36'
-
-    foreground: '0xeff0eb'
-
-
-
-  # Normal colors
-
-  normal:
-
-    black:   '0x282a36'
-
-    red:     '0xff5c57'
-
-    green:   '0x5af78e'
-
-    yellow:  '0xf3f99d'
-
-    blue:    '0x57c7ff'
-
-    magenta: '0xff6ac1'
-
-    cyan:    '0x9aedfe'
-
-    white:   '0xf1f1f0'
-
-
-
-  # Bright colors
-
-  bright:
-
-    black:   '0x686868'
-
-    red:     '0xff5c57'
-
-    green:   '0x5af78e'
-
-    yellow:  '0xf3f99d'
-
-    blue:    '0x57c7ff'
-
-    magenta: '0xff6ac1'
-
-    cyan:    '0x9aedfe'
-
-    white:   '0xf1f1f0'
-#
 
 # Specifying a `duration` of `0` will disable the visual bell.
 
@@ -995,3 +940,92 @@ working_directory: None
   #- { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
 
 
+# Colors (Tangoish)
+# colors:
+# 
+#   # Default colors
+# 
+#   primary:
+# 
+#     background: '0x282a36'
+# 
+#     foreground: '0xeff0eb'
+# 
+# 
+# 
+#   # Normal colors
+# 
+#   normal:
+# 
+#     black:   '0x282a36'
+# 
+#     red:     '0xff5c57'
+# 
+#     green:   '0x5af78e'
+# 
+#     yellow:  '0xf3f99d'
+# 
+#     blue:    '0x57c7ff'
+# 
+#     magenta: '0xff6ac1'
+# 
+#     cyan:    '0x9aedfe'
+# 
+#     white:   '0xf1f1f0'
+# 
+# 
+# 
+#   # Bright colors
+# 
+#   bright:
+# 
+#     black:   '0x686868'
+# 
+#     red:     '0xff5c57'
+# 
+#     green:   '0x5af78e'
+# 
+#     yellow:  '0xf3f99d'
+# 
+#     blue:    '0x57c7ff'
+# 
+#     magenta: '0xff6ac1'
+# 
+#     cyan:    '0x9aedfe'
+# 
+#     white:   '0xf1f1f0'
+
+
+# Colors (Rigellute/shades-of-purple)
+colors:
+  # Default colors
+  primary:
+    background: "0x1E1E3F"
+    foreground: "0xE1EFFF"
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: "0x1E1E3F"
+    cursor: "0xFAD000"
+
+  # Normal colors
+  normal:
+    black: "0x000000"
+    red: "0xEC3A37"
+    green: "0x75e44c"
+    yellow: "0xFAD000"
+    blue: "0x6943FF"
+    magenta: "0xFF2C70"
+    cyan: "0x80FCFF"
+    white: "0xFFFFFF"
+
+  # Bright colors
+  bright:
+    black: "0x5C5C61"
+    red: "0xEC3A37"
+    green: "0x3AD900"
+    yellow: "0xFAD000"
+    blue: "0x6943FF"
+    magenta: "0xFB94FF"
+    cyan: "0x80FCFF"
+    white: "0x2D2B55"
