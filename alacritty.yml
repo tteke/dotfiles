@@ -218,7 +218,7 @@ font:
 
     #   - (Windows) Consolas
 
-    family: DankMono Nerd Font
+    family: DankMono Nerd Font 
 
 
 
@@ -246,7 +246,7 @@ font:
 
     # The `style` can be specified to pick a specific face.
 
-    style: Bold
+    style: Bolder
 
 
 
@@ -296,7 +296,7 @@ font:
 
   # Point size
 
-  size: 14.0
+  size: 12.0
 
 
 
@@ -360,7 +360,7 @@ font:
 
 # If `true`, bold text is drawn using the bright color variants.
 
-draw_bold_text_with_bright_colors: true
+draw_bold_text_with_bright_colors: false
 
 
 
@@ -385,7 +385,7 @@ draw_bold_text_with_bright_colors: true
 
 # The value `0.0` is completely transparent and `1.0` is opaque.
 
-background_opacity: 1.0
+background_opacity: 0.95
 
 
 
@@ -421,7 +421,7 @@ cursor:
 
   #   - | Beam
 
-  style: Underline
+  style: Block
 
 
 
@@ -429,7 +429,7 @@ cursor:
 
   # window is not focused.
 
-  #unfocused_hollow: true
+  unfocused_hollow: true
 
 
 
@@ -997,35 +997,62 @@ working_directory: None
 
 
 # Colors (Rigellute/shades-of-purple)
+# colors:
+#   # Default colors
+#   primary:
+#     background: "0x1E1E3F"
+#     foreground: "0xE1EFFF"
+
+#   # Colors the cursor will use if `custom_cursor_colors` is true
+#   cursor:
+#     text: "0x1E1E3F"
+#     cursor: "0xFAD000"
+
+#   # Normal colors
+#   normal:
+#     black: "0x000000"
+#     red: "0xEC3A37"
+#     green: "0x75e44c"
+#     yellow: "0xFAD000"
+#     blue: "0x6943FF"
+#     magenta: "0xFF2C70"
+#     cyan: "0x80FCFF"
+#     white: "0xFFFFFF"
+
+#   # Bright colors
+#   bright:
+#     black: "0x5C5C61"
+#     red: "0xEC3A37"
+#     green: "0x3AD900"
+#     yellow: "0xFAD000"
+#     blue: "0x6943FF"
+#     magenta: "0xFB94FF"
+#     cyan: "0x80FCFF"
+#     white: "0x2D2B55"
+ 
+# Colors (ayu_light)
 colors:
-  # Default colors
   primary:
-    background: "0x1E1E3F"
-    foreground: "0xE1EFFF"
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
+    background: '0xfafafa'
+    foreground: '0x5c6773'
   cursor:
-    text: "0x1E1E3F"
-    cursor: "0xFAD000"
-
-  # Normal colors
+    text:   '0x5c6773'
+    cursor: '0xff6a00'
   normal:
-    black: "0x000000"
-    red: "0xEC3A37"
-    green: "0x75e44c"
-    yellow: "0xFAD000"
-    blue: "0x6943FF"
-    magenta: "0xFF2C70"
-    cyan: "0x80FCFF"
-    white: "0xFFFFFF"
-
-  # Bright colors
+    black:   '0x000000'
+    red:     '0xff3333'
+    green:   '0x86b300'
+    yellow:  '0xf29718'
+    blue:    '0x41a6d9'
+    magenta: '0xf07178'
+    cyan:    '0x4dbf99'
+    white:   '0xffffff'
   bright:
-    black: "0x5C5C61"
-    red: "0xEC3A37"
-    green: "0x3AD900"
-    yellow: "0xFAD000"
-    blue: "0x6943FF"
-    magenta: "0xFB94FF"
-    cyan: "0x80FCFF"
-    white: "0x2D2B55"
+    black:   '0x323232'
+    red:     '0xff6565'
+    green:   '0xb8e532'
+    yellow:  '0xffc94a'
+    blue:    '0x73d8ff'
+    magenta: '0xffa3aa'
+    cyan:    '0x7ff1cb'
+    white:   '0xffffff'

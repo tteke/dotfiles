@@ -50,8 +50,10 @@ Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-eslint', 'coc-prettier', 'coc-tsserver', 'coc-rls']
 " Plug 'flazz/vim-colorschemes'
-Plug 'megantiu/true.vim'
-let g:true_airline = 1
+" Plug 'megantiu/true.vim'
+" let g:true_airline = 1
+Plug 'ayu-theme/ayu-vim'
+let ayucolor="light"
 
 Plug 'sheerun/vim-polyglot'
 Plug 'machakann/vim-sandwich'
@@ -189,14 +191,14 @@ if (has("termguicolors"))
 endif
 " let g:oceanic_next_terminal_bold = 1
 " let g:oceanic_next_terminal_italic = 1
-colorscheme true
+colorscheme ayu
 
 set mousemodel=popup
 set t_Co=256
 set guioptions=egmrti
 set gfn=Monospace\ 10
 
-set guicursor=n:blinkon1
+set guicursor=n:blinkon0
 " snd hl group is for language mappings
 set guicursor=n-v-c:block-blinkon250-Cursor/lCursor
 " ve = visual exclusive
@@ -207,8 +209,8 @@ set guicursor+=o:hor50-Cursor
 set guicursor+=i-ci:ver25-blinkon250-CursorTransparent/lCursor
 set guicursor+=r-cr:hor20-Cursor/lCursor
 
-highl CursorTransparent ctermfg=16 ctermbg=253 guifg=#000000 guibg=#00FF00 gui=strikethrough blend=100
-highl Cursor ctermfg=16 ctermbg=253 guifg=#000000 guibg=#00FF00
+ highl CursorTransparent ctermfg=16 ctermbg=253 guifg=#000000 guibg=#00FF00 gui=strikethrough blend=100
+ highl Cursor ctermfg=16 ctermbg=253 guifg=#000000 guibg=#00FF00
 
 if has("gui_running")
   if has("gui_mac") || has("gui_macvim")
@@ -222,7 +224,7 @@ else
   let g:indentLine_enabled = 1
   let g:indentLine_char = '▏'
   let g:indentLine_concealcursor = 0
-  let g:indentLine_bgcolor_gui = "#5f005f"
+  let g:indentLine_bgcolor_gui = "#d7d7d7"
   let g:indentLine_bgcolor_term = 53
   let g:indentLine_faster = 1
 endif
@@ -230,7 +232,7 @@ endif
 
 
 "" Disable the blinking cursor.
-set gcr=a:blinkon0
+set gcr+=a:blinkon0
 set scrolloff=3
 
 "" Status bar
@@ -257,7 +259,7 @@ endif
 
 " vim-airline
 " let g:airline_theme = 'oceanicnext'
-let g:airline_theme='true'
+" let g:airline_theme='true'
 let g:airline#extensions#branch#enabled = 1
 " let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -734,10 +736,18 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " fix cursor shape after coc listings close
-nnoremap <silent> <space>f :set guicursor=n:blinkon1<CR>
+nnoremap <silent> <space>f :set guicursor=n:blinkon0<CR>
+
+nnoremap <silent> <space>w :w<CR>
+
+set cursorcolumn
+set cursorline
 
 highlight Normal guibg=none
 highlight NonText guibg=none
-highlight LineNr guibg=deeppink4  
-highlight SignColumn guibg=deeppink3
+highlight LineNr guibg=lightskyblue1 guifg=steelblue1
+highlight SignColumn guibg=steelblue1
+highlight Visual guibg=lightskyblue1
 set nuw=5
+map j gj
+map k gk
