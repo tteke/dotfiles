@@ -458,11 +458,9 @@ cursor:
 #   - (Windows) powershell
 
 shell:
-
-#  program: "/bin/sh"
-
-#  args:
-
+  program: "/bin/fish"
+  args:
+    - "-c"
     - "tmux" 
 
 
