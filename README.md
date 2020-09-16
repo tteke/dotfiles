@@ -1,1 +1,1 @@
-My linux dotfiles. Only tmux and vim for now.
+My linux dotfiles.
