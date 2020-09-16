@@ -21,6 +21,9 @@ if !filereadable(vimplug_exists)
   autocmd VimEnter * PlugInstall
 endif
 
+set exrc
+set secure  
+
 " Required:
 call plug#begin(expand('~/.config/nvim/plugged'))
 
@@ -32,6 +35,8 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-dispatch'
+Plug 'vhdirk/vim-cmake'
 " Plug 'vim-airline/vim-airline-themes'
 
 " Plug 'airblade/vim-gitgutter'
@@ -48,12 +53,12 @@ Plug 'avelino/vim-bootstrap-updater'
 Plug 'jparise/vim-graphql'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-eslint', 'coc-prettier', 'coc-tsserver', 'coc-rls']
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-eslint', 'coc-prettier', 'coc-tsserver', 'coc-rls', 'coc-clangd']
 " Plug 'flazz/vim-colorschemes'
 " Plug 'megantiu/true.vim'
 " let g:true_airline = 1
 Plug 'ayu-theme/ayu-vim'
-let ayucolor="light"
+let ayucolor="dark"
 
 Plug 'sheerun/vim-polyglot'
 Plug 'machakann/vim-sandwich'
@@ -224,8 +229,8 @@ else
   let g:indentLine_enabled = 1
   let g:indentLine_char = '▏'
   let g:indentLine_concealcursor = 0
-  let g:indentLine_bgcolor_gui = "#d7d7d7"
-  let g:indentLine_bgcolor_term = 53
+  " let g:indentLine_bgcolor_gui = "#d7d7d7"
+  " let g:indentLine_bgcolor_term = 53
   let g:indentLine_faster = 1
 endif
 
@@ -743,11 +748,11 @@ nnoremap <silent> <space>w :w<CR>
 set cursorcolumn
 set cursorline
 
-highlight Normal guibg=none
-highlight NonText guibg=none
-highlight LineNr guibg=lightskyblue1 guifg=steelblue1
-highlight SignColumn guibg=steelblue1
-highlight Visual guibg=lightskyblue1
+" highlight Normal guibg=none
+" highlight NonText guibg=none
+" highlight LineNr guibg=lightskyblue1 guifg=steelblue1
+" highlight SignColumn guibg=steelblue1
+" highlight Visual guibg=lightskyblue1
 set nuw=5
 map j gj
 map k gk

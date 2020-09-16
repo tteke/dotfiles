@@ -1,7 +1,8 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css", "html", "javascript", "typescriptreact", "json", "javascriptreact", "typescript.tsx", "rust"],
+  "coc.preferences.formatOnSaveFiletypes": ["css", "cpp", "html", "javascript", "typescriptreact", "json", "javascriptreact", "typescript.tsx", "rust"],
   "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact", "typescript.tsx"],
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
-  "diagnostic.infoSign": "•"
+  "diagnostic.infoSign": "•",
+  "clangd.compilationDatabasePath": "build/"
 }
