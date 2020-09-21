@@ -54,12 +54,8 @@ Plug 'jparise/vim-graphql'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-eslint', 'coc-prettier', 'coc-tsserver', 'coc-rls', 'coc-clangd']
-" Plug 'flazz/vim-colorschemes'
-" Plug 'megantiu/true.vim'
-" let g:true_airline = 1
-Plug 'ayu-theme/ayu-vim'
-let ayucolor="dark"
 
+let g:polyglot_disabled = []
 Plug 'sheerun/vim-polyglot'
 Plug 'machakann/vim-sandwich'
 Plug 'rust-lang/rust.vim'
@@ -87,10 +83,14 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 "" Color
-" Plug 'mhartington/oceanic-next'
-" Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'drewtempelmeyer/palenight.vim'
+set background=dark
+
+" Italics for my favorite color scheme
+let g:palenight_terminal_italics=1
 
 Plug 'ryanoasis/vim-devicons' 
+
 " font patcher
 "*****************************************************************************
 "" Custom bundles
@@ -196,7 +196,7 @@ if (has("termguicolors"))
 endif
 " let g:oceanic_next_terminal_bold = 1
 " let g:oceanic_next_terminal_italic = 1
-colorscheme ayu
+colorscheme palenight
 
 set mousemodel=popup
 set t_Co=256
@@ -263,7 +263,7 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-" let g:airline_theme = 'oceanicnext'
+let g:airline_theme = "palenight"
 " let g:airline_theme='true'
 let g:airline#extensions#branch#enabled = 1
 " let g:airline#extensions#ale#enabled = 1
@@ -756,3 +756,18 @@ set cursorline
 set nuw=5
 map j gj
 map k gk
+
+if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+" hi! Normal ctermbg=NONE guibg=NONE
+" hi! NonText ctermbg=NONE guibg=NONE
