@@ -1,10 +1,9 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css", "cpp", "html", "javascript", "typescriptreact", "json", "javascriptreact", "typescript.tsx", "rust"],
-  "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact", "typescript.tsx"],
+  "coc.preferences.formatOnSaveFiletypes": ["css", "cpp", "typescriptreact", "json", "javascriptreact", "typescript.tsx", "rust"],
   "emmet.includeLanguages": {"javascript": "javascriptreact"},
   "emmet.showExpandedAbbreviation": "always",
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
-  "clangd.compilationDatabasePath": "build/",
+  "clangd.compilationDatabasePath": "build/"
 }

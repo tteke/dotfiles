@@ -55,6 +55,8 @@ Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-eslint', 'coc-prettier', 'coc-tsserver', 'coc-rls', 'coc-clangd']
 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+
 let g:polyglot_disabled = []
 Plug 'sheerun/vim-polyglot'
 Plug 'machakann/vim-sandwich'
@@ -215,8 +217,8 @@ set guicursor+=o:hor50-Cursor
 set guicursor+=i-ci:ver25-blinkon250-CursorTransparent/lCursor
 set guicursor+=r-cr:hor20-Cursor/lCursor
 
- highl CursorTransparent ctermfg=16 ctermbg=253 guifg=#000000 guibg=#00FF00 gui=strikethrough blend=100
- highl Cursor ctermfg=16 ctermbg=253 guifg=#000000 guibg=#00FF00
+"" highl CursorTransparent ctermfg=16 ctermbg=253 guifg=#000000 guibg=#00FF00 gui=strikethrough blend=100
+"" highl Cursor ctermfg=16 ctermbg=253 guifg=#000000 guibg=#00FF00
 
 if has("gui_running")
   if has("gui_mac") || has("gui_macvim")
@@ -440,9 +442,9 @@ if has('autocmd')
 endif
 
 "" Copy/Paste/Cut
-" if has('unnamedplus')
+ if has('unnamedplus')
   set clipboard=unnamed,unnamedplus
-" endif
+ endif
 
 noremap YY "+y<CR>
 noremap <leader>p "+gP<CR>
@@ -453,6 +455,9 @@ if has('macunix')
   vmap <C-x> :!pbcopy<CR>
   vmap <C-c> :w !pbcopy<CR><CR>
 endif
+
+" copy (write) highlighted text to .vimbuffer
+" vmap <C-c> y:new ~/.vimbuffer<CR>VGp:x<CR> \| :!cat ~/.vimbuffer \| clip.exe <CR><CR>
 
 "" Buffer nav
 noremap <leader>z :bp<CR>
@@ -680,8 +685,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Remap for format selected region
-" xmap <leader>f  <Plug>(coc-format-selected)
-" nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 " nmap <leader><leader>f :ALEFix
 augroup mygroup
@@ -775,3 +780,4 @@ endif
 
  "organize imports before save
  autocmd BufWritePre *.js :OR
+
